@@ -13,9 +13,9 @@ angular.module('instaGithupApp').config([
       .state('users.user', {
         url: '/:userId',
         templateUrl: '/views/user_info.html',
-
+        controller: 'UserCtrl',
         resolve : {
-          user: function(User) {
+          userResolve: function(User,$stateParams) {
             return User.get($stateParams["userId"]);
           }
         }

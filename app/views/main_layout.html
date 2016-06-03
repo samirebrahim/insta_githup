@@ -13,6 +13,9 @@
     <div ng-repeat="user in users">
       <p class="user-name" ui-sref="users.user({userId: user.id})" ng-click="ChangeActiveUser(user)" ng-class="{'select-user': user.id == states.activeItem}">{{user.login}}</p>
     </div>
+    <div class="load-more">
+      <button class="btn btn-info" ng-click="loadMore()">Load More</button>
+    </div>
   </div>
   <div class="main-page">
     <div class="title">User Info</div>

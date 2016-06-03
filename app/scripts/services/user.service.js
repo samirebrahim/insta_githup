@@ -15,13 +15,17 @@ instaGithupApp.factory('User',
       });
     }
 
-    User.list = function(callback) {
-      $http.get('//api.github.com/users').success(callback);
+    User.list = function(page,range) {
+    return   $http.get('//api.github.com/users?page='+page + '&per_page=' + range);
     };
+
+
+
     User.get = function(userId) {
-      return $http.get('//api.github.com/users' + userId);
+      return $http.get('//api.github.com/users/' + userId);
     }
 
 
     return User;
   });
+  // return $http.get(');
