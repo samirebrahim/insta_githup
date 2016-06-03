@@ -1,0 +1,22 @@
+<div class="header clearfix">
+  <div class="logo">
+    <img src="images/instabug.png" alt="">
+    <div class="logo-text">Instabug</div>
+  </div>
+  <span class="title"> Github Users</span>
+</div>
+<div class="page clearfix">
+  <div class="side-bar">
+    <div class="users-header">
+      Users List
+    </div>
+    <div ng-repeat="user in users">
+      <p class="user-name" ui-sref="users.user({userId: user.id})" ng-click="ChangeActiveUser(user)" ng-class="{'select-user': user.id == states.activeItem}">{{user.login}}</p>
+    </div>
+  </div>
+  <div class="main-page">
+    <div class="title">User Info</div>
+    <div ui-view></div>
+  </div>
+
+</div>

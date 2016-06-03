@@ -1,0 +1,319 @@
+@charset "utf-8";
+/* CSS Document */
+/* CSS Document */
+.ng-cloak,
+.x-ng-cloak,
+[data-ng-cloak],
+[ng-cloak],
+[ng\:cloak],
+[x-ng-cloak] {
+  display: none !important;
+}
+/* `XHTML, HTML4, HTML5 Reset
+----------------------------------------------------------------------------------------------------*/
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+dialog,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+meter,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+rp,
+rt,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video,
+xmp {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+a {
+  text-decoration: none;
+  color: #4c4c4c;
+}
+body,
+html {
+  height: 100%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+b,
+strong {
+  font-weight: bold;
+}
+img {
+  border: 0;
+  color: transparent;
+  font-size: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+ol,
+ul {
+  list-style: none;
+}
+li {
+  display: list-item;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+td,
+th {
+  font-weight: normal;
+  vertical-align: top;
+  text-align: left;
+}
+q {
+  quotes: none;
+}
+q:after,
+q:before {
+  content: '';
+  content: none;
+}
+button,
+form,
+input,
+select,
+textarea {
+  outline: none;
+}
+.f-r {
+  float: right !important;
+}
+.none {
+  float: none!important;
+}
+.f-l {
+  float: left !important;
+}
+.imgcontain {
+  width: 100%;
+  height: 100%;
+}
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+.clear_both {
+  clear: both;
+}
+.inlin {
+  width: 100%;
+  display: inline-block;
+}
+.relative {
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 100;
+}
+// my style
+body {
+  font: 400 113%/1.4 ProximaNova,Helvetica,Arial,sans-serif;
+  background-image: url("../images/landing-background.jpg");
+  background-size: cover;
+  color: #7a8993;
+
+}
+.wrapper {
+  width: 96%;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+.user-avatar{
+  width:200px;
+  height:200px;
+  margin:0 auto;
+  border-radius:50%;
+}
+.header {
+  padding: 24px 0;
+  border: 0;
+  text-align: center;
+  .logo {
+    float: left;
+    img {
+      height: 38px;
+      vertical-align: middle;
+      width: 38px;
+      float: left;
+      border-radius: 4px;
+    }
+    .logo-text {
+      margin-left: 16px;
+      float: left;
+      font-family: Corbel,sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      color: #fff;
+      line-height: 38px;
+    }
+  }
+  .title {
+    font-family: Corbel,sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #fff;
+    line-height: 38px;
+    border-radius: 4px;
+    padding: 24px;
+    background-color: #53be8a;
+  }
+}
+.page {
+  .side-bar {
+    float: left;
+    width: 24%;
+    margin-right: 2%;
+    .user-name {
+      font-weight: 500;
+      cursor: pointer;
+      padding: 19px 24px;
+      font-size: 18px;
+      color: rgb(122, 137, 147);
+      cursor: pointer;
+    }
+    .user-name:hover {
+      opacity: 0.8;
+      background-color: #d1faff;
+      border-right: 4px solid #00bcd4;
+    }
+    .select-user {
+      background: linear-gradient(to right,#2196f3,#00bcd4);
+      color: #fff;
+    }
+    .select-user:hover {
+      opacity: 1;
+    }
+    .users-header {
+      padding: 19px 24px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 24px;
+      color: rgb(128, 146, 165);
+    }
+  }
+  .main-page {
+    padding: 24px;
+    float: right;
+    width: 74%;
+    .title {
+      font-weight: 700;
+      font-size: 16;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+  }
+  .side-bar,
+  .main-page {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  }
+}
