@@ -4,13 +4,7 @@ angular.module('instaGithupApp').config([
   function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/users/1');
-    // 
-    // $urlRouterProvider.when("", "/").when("/", ['User',
-    //   function(User) {
-    //     User.goToDefaultPage();
-    //   }
-    // ]);
-    $stateProvider
+      $stateProvider
       .state('users', {
         url: '/users',
         templateUrl: '/views/main_layout.html',

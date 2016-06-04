@@ -9,8 +9,8 @@ instaGithupApp.factory('User',
       return;
     }
 
-    User.list = function(page) {
-      return $http.get('//api.github.com/users?page=' + page + '&per_page=10');
+    User.list = function() {
+      return $http.get('//api.github.com/users?page=1&per_page=10');
     };
 
 
@@ -22,4 +22,3 @@ instaGithupApp.factory('User',
 
     return User;
   });
-// return $http.get(');

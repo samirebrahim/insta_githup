@@ -14,9 +14,7 @@ angular.module('instaGithupApp')
 
     var init = function() {
       $scope.states = {};
-      $scope.perPage = 10;; // since The integer ID of the last User that you've seen.  params for githup apis
-      $scope.page = 1; // page params for githup apis
-      User.list($scope.page)
+      User.list()
         .then(function(response) {
           $scope.users = response.data;
           $scope.nextPage = parse_link_header(response.headers("Link"));
