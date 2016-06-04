@@ -12,28 +12,27 @@ angular.module('instaGithupApp')
 
     var init = function() {
       $scope.states = {};
-      $scope.selectedUser = null;
-      $scope.page = 1;
-      $scope.pageLimit = 10;
+      $scope.since = 0; // since params for githup apis
+      $scope.page = 0; // page params for githup apis
 
-      User.list($scope.page, $scope.pageLimit)
+      User.list($scope.page, $scope.since)
         .success(function(data) {
           $scope.users = data;
         });
     }
     $scope.loadMore = function() {;
-        $scope.pageLimit += 10;
-        User.list($scope.page, $scope.pageLimit)
+        $scope.since += 1;
+        $scope.page += 1;
+        User.list($scope.page, $scope.since)
           .success(function(data) {
-            $scope.users = data;
+            console.log(data);
+            $scope.users = $scope.users.concat(data);
 
           });
       }
       //for the left side menu
-    $scope.ChangeActiveUser = function(user) {
-
-      $scope.states.activeItem = user.id;
-      // $scope.selectedUser = user;
+    $scope.ChangeActiveUser = function(id) {
+      $scope.states.activeItem = id;
     }
     init();
   });

@@ -213,6 +213,7 @@ h5,
 h6 {
   font-weight: 100;
 }
+$steel: #7a8993;
 // my style
 body {
   font: 400 113%/1.4 ProximaNova,Helvetica,Arial,sans-serif;
@@ -235,25 +236,6 @@ body {
   padding: 24px 0;
   border: 0;
   text-align: center;
-  .logo {
-    float: left;
-    img {
-      height: 38px;
-      vertical-align: middle;
-      width: 38px;
-      float: left;
-      border-radius: 4px;
-    }
-    .logo-text {
-      margin-left: 16px;
-      float: left;
-      font-family: Corbel,sans-serif;
-      font-weight: 700;
-      font-size: 30px;
-      color: #fff;
-      line-height: 38px;
-    }
-  }
   .title {
     font-family: Corbel,sans-serif;
     font-weight: 700;
@@ -265,14 +247,37 @@ body {
     background-color: #53be8a;
   }
 }
+.logo {
+  text-align: center;
+  padding: 16px;
+  img {
+    height: 38px;
+    width: 38px;
+    border-radius: 4px;
+    vertical-align: middle;
+  }
+  .logo-text {
+    margin-left: 16px;
+    font-family: Corbel,sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: $steel;
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
 .page {
   .side-bar {
-    float: left;
-    width: 24%;
+    width: 17%;
+    height: 100%;
     margin-right: 2%;
+    border-radius: 4px;
+    position: fixed;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, .95);
+    box-shadow: 1px 0 4px rgba(123, 137, 147, .3);
     .load-more {
       margin-top: 16px;
-
       button {
         padding: 8px 40px;
         color: #fff;
@@ -291,7 +296,7 @@ body {
       cursor: pointer;
       padding: 19px 24px;
       font-size: 18px;
-      color: rgb(122, 137, 147);
+      color: $steel;
       cursor: pointer;
     }
     .user-name:hover {
@@ -314,10 +319,28 @@ body {
       color: rgb(128, 146, 165);
     }
   }
+  .side-bar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .side-bar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .side-bar::-webkit-scrollbar-thumb {
+    background-color: #edf0f5;
+    outline: 1px solid #f2f4f8;
+    border-radius: 3px;
+    width: 5px;
+    cursor: pointer;
+  }
   .main-page {
-    padding: 24px;
-    float: right;
     width: 74%;
+    margin-left: 26%;
+    .main-wrapper {
+      padding: 24px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    }
     .title {
       font-weight: 700;
       font-size: 16;
@@ -347,11 +370,5 @@ body {
         }
       }
     }
-  }
-  .side-bar,
-  .main-page {
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.2);
   }
 }

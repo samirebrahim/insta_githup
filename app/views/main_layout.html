@@ -1,25 +1,28 @@
-<div class="header clearfix">
-  <div class="logo">
-    <img src="images/instabug.png" alt="">
-    <div class="logo-text">Instabug</div>
-  </div>
-  <span class="title"> Github Users</span>
-</div>
 <div class="page clearfix">
   <div class="side-bar">
+    <div class="logo">
+      <img src="images/instabug.png" alt="">
+      <div class="logo-text">Instabug</div>
+    </div>
+
     <div class="users-header">
       Users List
     </div>
     <div ng-repeat="user in users">
-      <p class="user-name" ui-sref="users.user({userId: user.id})" ng-click="ChangeActiveUser(user)" ng-class="{'select-user': user.id == states.activeItem}">{{user.login}}</p>
+      <p class="user-name" ui-sref="users.user({userId: user.id})" ng-click="ChangeActiveUser(user.id)" ng-class="{'select-user': user.id == states.activeItem}">{{user.login}}</p>
     </div>
     <div class="load-more">
-      <button  ng-click="loadMore()">Load More</button>
+      <button ng-click="loadMore()">Load More</button>
     </div>
   </div>
   <div class="main-page">
-    <div class="title">User Info</div>
-    <div ui-view></div>
+    <div class="header"> <span class="title"> Github Users</span>
+    </div>
+    <div class="main-wrapper">
+
+      <div class="title">User Info</div>
+      <div ui-view></div>
+    </div>
   </div>
 
 </div>
