@@ -12,8 +12,8 @@ angular.module('instaGithupApp')
 
     var init = function() {
       $scope.user = userResolve.data;
-      
-       $scope.ChangeActiveUser($scope.user["login"]);
+
+       $scope.ChangeActiveUser($scope.user["id"]);
     }
 
     init();

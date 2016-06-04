@@ -16,7 +16,7 @@ instaGithupApp.factory('User',
 
 
     User.get = function(userId) {
-      return $http.get('//api.github.com/users/' + userId);
+      return $http.get('//api.github.com/user/' + userId);
     }
 
 
