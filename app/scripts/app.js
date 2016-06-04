@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 var instaGithupApp = angular.module('instaGithupApp', [
-  'ui.router',
+  'ui.router','angular-loading-bar', 'ngAnimate'
 ]);
 
 instaGithupApp.config(['$compileProvider', function($compileProvider) {
