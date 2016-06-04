@@ -12,7 +12,8 @@ angular.module('instaGithupApp')
 
     var init = function() {
       $scope.states = {};
-      $scope.since = 0; // since params for githup apis
+      $scope.since = 0
+      $scope.perPage=10;; // since The integer ID of the last User that you've seen.  params for githup apis
       $scope.page = 0; // page params for githup apis
 
       User.list($scope.page, $scope.since)
@@ -21,7 +22,7 @@ angular.module('instaGithupApp')
         });
     }
     $scope.loadMore = function() {;
-        $scope.since += 1;
+        $scope.since += $scope.perPage;
         $scope.page += 1;
         User.list($scope.page, $scope.since)
           .success(function(data) {
