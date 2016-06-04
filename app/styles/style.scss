@@ -219,18 +219,17 @@ body {
   background-image: url("../images/landing-background.jpg");
   background-size: cover;
   color: #7a8993;
-
 }
 .wrapper {
   width: 96%;
   margin: 0 auto;
   max-width: 1440px;
 }
-.user-avatar{
-  width:200px;
-  height:200px;
-  margin:0 auto;
-  border-radius:50%;
+.user-avatar {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
 }
 .header {
   padding: 24px 0;
@@ -271,6 +270,22 @@ body {
     float: left;
     width: 24%;
     margin-right: 2%;
+    .load-more {
+      margin-top: 16px;
+
+      button {
+        padding: 8px 40px;
+        color: #fff;
+        border: solid 1px #357ebd;
+        background-color: #66bb6a;
+        border-radius: 5px;
+        display: block;
+        width: 90%;
+        text-align: center;
+        font-size: 24px;
+        margin: 0 auto 16px;
+      }
+    }
     .user-name {
       font-weight: 500;
       cursor: pointer;
@@ -308,6 +323,29 @@ body {
       font-size: 16;
       text-transform: uppercase;
       margin-bottom: 24px;
+    }
+    .user-data {
+      margin-bottom: 24px;
+      label {
+        margin-right: 16px;
+        font-weight: 500;
+      }
+    }
+    .personal-table {
+      tr {
+        th,
+        td:nth-child(1) {
+          font-weight: 700;
+        }
+        th {
+          border: 0;
+        }
+        th,
+        td {
+          padding: 16px;
+          border-bottom: 1px solid #e8e8e8;
+        }
+      }
     }
   }
   .side-bar,

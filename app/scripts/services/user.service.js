@@ -1,22 +1,17 @@
 'use strict';
 
 instaGithupApp.factory('User',
-  function($http) {
+  function($http,$state) {
     var User = {};
+    User.goToDefaultPage = function() {
 
-    User.all = function(filter, page, range) {
-      var params = {
-        page: page,
-        per_page: range
-      };
-      angular.extend(params, filter);
-      return $http.get('/api/users', {
-        params: params
-      });
+      $state.go('users');
+      return;
     }
+  
 
-    User.list = function(page,range) {
-    return   $http.get('//api.github.com/users?page='+page + '&per_page=' + range);
+    User.list = function(page, range) {
+      return $http.get('//api.github.com/users?page=' + page + '&per_page=' + range);
     };
 
 
@@ -28,4 +23,4 @@ instaGithupApp.factory('User',
 
     return User;
   });
-  // return $http.get(');
+// return $http.get(');

@@ -1,2 +1,55 @@
 <div class="user-avatar" insta-background-image="{{user.avatar_url}}">
-</div>{{usr}}
+
+</div>
+<!-- <div class="user-data clearfix">
+  <div class="f-r">
+    <label>User-ID :</label> <span>{{user.id}}</span>
+  </div>
+  <div class="f-l">
+    <label>User-Name :</label> <span>{{user.name}}</span>
+
+  </div>
+</div>
+<div class="user-data clearfix">
+  <div class="f-r">
+    <label>User-Email :</label> <span>{{user.email}}</span>
+  </div>
+  <div class="f-l">
+    <label>User-Created-At :</label> <span>{{user.created_at | date:'medium'}}</span>
+
+  </div>
+</div>
+<div class="user-data">
+  <label >Bio :</label>
+  <span ng-show={{user.bio}}>{{user.bio}}</span>
+  <span ng-hide="{{user.bio}}">No Bio Available</span>
+
+</div> -->
+<table class="table table-reponsive table-hover table-striped personal-table">
+  <tr>
+    <th>Personal Data</th>
+  </tr>
+  <tr>
+    <td>Id </td>
+    <td>{{user.id}}</td>
+  </tr>
+  <tr>
+    <td>Name </td>
+    <td ng-show="user.name">{{user.name}}</td>
+    <td ng-hide="user.name">No Name Available</td>
+  </tr>
+  <tr>
+    <td>Email </td>
+    <td ng-show="user.email">{{user.email}}</td>
+    <td ng-hide="user.email">No Email Available</td>
+  </tr>
+  <tr>
+    <td>Created at </td>
+    <td>{{user.created_at | date:'medium'}}</td>
+  </tr>
+  <tr>
+    <td>Bio</td>
+    <td ng-show="{{user.bio}}">{{user.bio}}</td>
+    <td ng-hide="user.bio">No Bio Available</td>
+  </tr>
+</table>

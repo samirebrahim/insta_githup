@@ -1,9 +1,15 @@
 'use strict';
 angular.module('instaGithupApp').config([
-  '$stateProvider',
-  function($stateProvider) {
+  '$stateProvider','$urlRouterProvider',
+  function($stateProvider,$urlRouterProvider) {
 
+    $urlRouterProvider.otherwise('/not_found');
 
+      $urlRouterProvider.when("", "/").when("/", ['$state', 'User',
+        function($state, User) {
+          User.goToDefaultPage();
+        }
+      ]);
     $stateProvider
       .state('users', {
         url: '/users',
