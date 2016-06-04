@@ -5,13 +5,12 @@ instaGithupApp.factory('User',
     var User = {};
     User.goToDefaultPage = function() {
 
-      $state.go('users');
+      $state.go('users.user');
       return;
     }
 
-
-    User.list = function(page, since) {
-      return $http.get('//api.github.com/users?page=' + page + '&per_page=10&since=' + since);
+    User.list = function(page) {
+      return $http.get('//api.github.com/users?page=' + page + '&per_page=10');
     };
 
 

@@ -3,10 +3,10 @@ angular.module('instaGithupApp').config([
   '$stateProvider', '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider) {
 
-    // $urlRouterProvider.otherwise('/not_found');
-    //
-    // $urlRouterProvider.when("", "/").when("/", ['$state', 'User',
-    //   function($state, User) {
+    $urlRouterProvider.otherwise('/users/1');
+    // 
+    // $urlRouterProvider.when("", "/").when("/", ['User',
+    //   function(User) {
     //     User.goToDefaultPage();
     //   }
     // ]);
