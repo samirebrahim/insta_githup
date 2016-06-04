@@ -8,9 +8,32 @@
  * Controller of the instaGithupApp
  */
 angular.module('instaGithupApp')
-  .controller('MainCtrl', function($scope, User) {
+  .controller('MainCtrl', function($scope, User, $http) {
 
 
+
+    var init = function() {
+      $scope.states = {};
+      $scope.perPage = 10;; // since The integer ID of the last User that you've seen.  params for githup apis
+      $scope.page = 1; // page params for githup apis
+      User.list($scope.page)
+        .then(function(response) {
+          $scope.users = response.data;
+          $scope.nextPage = parse_link_header(response.headers("Link"));
+        });
+    }
+    $scope.loadMore = function() {;
+        $http.get($scope.nextPage["next"]).then(function(response) {
+          $scope.nextPage = parse_link_header(response.headers("Link"));
+            $scope.users = $scope.users.concat(response.data);
+          }
+
+        );
+      }
+      //for the left side menu
+    $scope.ChangeActiveUser = function(id) {
+      $scope.states.activeItem = id;
+    }
     var parse_link_header = function(header) {
       if (header.length === 0) {
         throw new Error("input must not be of zero length");
@@ -30,29 +53,6 @@ angular.module('instaGithupApp')
         links[name] = url;
       }
       return links;
-    }
-
-    var init = function() {
-      $scope.states = {};
-      $scope.perPage = 10;; // since The integer ID of the last User that you've seen.  params for githup apis
-      $scope.page = 1; // page params for githup apis
-
-      User.list($scope.page)
-        .success(function(data) {
-          $scope.users = data;
-        });
-    }
-    $scope.loadMore = function() {;
-        User.list($scope.page)
-          .then(function(response) {
-            console.log(response.headers.get("Link"));
-            $scope.users = response.data;
-            $scope.nextPage = parse_link_header(response.headers);
-          });
-      }
-      //for the left side menu
-    $scope.ChangeActiveUser = function(id) {
-      $scope.states.activeItem = id;
     }
 
     init();

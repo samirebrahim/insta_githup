@@ -49,7 +49,7 @@
   </tr>
   <tr>
     <td>Bio</td>
-    <td ng-show="{{user.bio}}">{{user.bio}}</td>
+    <td ng-show="user.bio" uib-tooltip="{{user.bio}}" tooltip-placement="top-left" tooltip-popup-delay="500"><div>{{user.bio}}</div></td>
     <td ng-hide="user.bio">No Bio Available</td>
   </tr>
 </table>

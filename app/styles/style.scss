@@ -366,6 +366,10 @@ body {
         th,
         td {
           padding: 16px;
+          overflow: hidden;
+          max-width:70px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           border-bottom: 1px solid #e8e8e8;
         }
       }
