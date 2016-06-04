@@ -8,8 +8,9 @@
     <div class="users-header">
       Users List
     </div>
-    <div ng-repeat="user in users">
-      <p class="user-name" ui-sref="users.user({userId: user.id})" ng-click="ChangeActiveUser(user.id)" ng-class="{'select-user': user.id == states.activeItem}">{{user.login}}</p>
+    <div ng-repeat="user in users" class="user-container" ui-sref="users.user({userId: user.id})"  ng-click="ChangeActiveUser(user.id)" ng-class="{'select-user': user.id == states.activeItem}">
+      <span class="user-small-avatar" insta-background-image="{{user.avatar_url}}"></span>
+      <span>{{user.login}}</span>
     </div>
     <div class="load-more">
       <button ng-click="loadMore()">Load More</button>
